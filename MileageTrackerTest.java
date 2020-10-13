@@ -61,4 +61,43 @@ public class MileageTrackerTest
         assertEquals(15, amount, 1e-6); // 1*10^-6
 
     }
+    @Test
+    public void testIncrementFuelConsumed()
+    {
+        MileageTracker testTracker = new MileageTracker();
+        testTracker.incrementFuelConsumed(2.5);
+        double amount = testTracker.getFuelConsumed();
+        assertEquals(2.5, amount, 1e-6);
+        
+        testTracker.incrementFuelConsumed(.5);
+        amount = testTracker.getFuelConsumed();
+        assertEquals(3, amount, 1e-6);
+
+    }
+    @Test
+    public void testGetMileage()
+    {
+        MileageTracker testTracker = new MileageTracker();
+        testTracker.incrementMilesDriven(100);
+        testTracker.incrementFuelConsumed(4);
+        double mileage = testTracker.getMileage();
+        assertEquals(25.0, mileage, 1e-6);
+        
+        
+    
+    }
+    @Test
+    public void testSetVIN()
+    {
+     MileageTracker testTracker = new MileageTracker();
+     String vin = new String("PSDF983425NF3");
+     testTracker.setVIN(vin);
+     String returnedVIN = testTracker.getVIN();
+     assertEquals(vin, returnedVIN);
+    }
+    
+    
+    
+    
+    
 }

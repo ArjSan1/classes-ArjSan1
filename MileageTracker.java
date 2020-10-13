@@ -7,9 +7,9 @@
  */
 public class MileageTracker
 {
-    /*
+    /* 2. 
      * Define Instance variables
-     * specify public vs priveate
+     * specify public vs private
      * specify type
      * specify name
      * Instance variables are:
@@ -22,7 +22,7 @@ public class MileageTracker
     private double fuelConsumed; // in units of gallons
     private String vin; // vehicle identification number
     
-    /* Define Contructor:
+    /* 3. Define Contructor:
      *  initalizes objects
      *  invoked using new operator
      *  name is same name of the class
@@ -55,7 +55,7 @@ public class MileageTracker
         this.vin = null;
     }
     
-    /* Define methods by specifying:
+    /* 1. Define methods by specifying:
      * visibily
      * return-type
      * methood name
@@ -92,6 +92,7 @@ public class MileageTracker
      */
     public void incrementFuelConsumed(double gallons)
     {
+        this.fuelConsumed += gallons;
         
     }
     
@@ -102,7 +103,7 @@ public class MileageTracker
      */
     public double getFuelConsumed()
     {
-        return 0.0;
+        return this.fuelConsumed;
     }
     
     
@@ -113,7 +114,7 @@ public class MileageTracker
      */
     public double getMileage()
     {
-        return 0.0;
+        return this.milesDriven / this.fuelConsumed;
     }
     
     /**
@@ -123,7 +124,7 @@ public class MileageTracker
      */
     public String getVIN()
     {
-        return null;
+        return this.vin;
     }
     
     /**
@@ -131,9 +132,17 @@ public class MileageTracker
      * 
      * @param newVIN    the vehicle identification (VIN) of this car
      */
-    public void setVIN(String vin)
+    public void setVIN(String newVIN)
     {
-        vin = vin;
+        /* 
+         * If parameter was named vin, it would "shadow" the instance variable vin
+         * Local and parameter variables "shadow" Instance variables of the same name
+         * In this code, vin would refer to the parameter and not the instance variable
+         * To refer explicitly to an instance variable, use "this"
+         * Advice: avoid this issue by giving local, parameter, and instance variables unique names;
+         */
+        
+        this.vin = newVIN;
     }
 }
 
