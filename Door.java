@@ -52,5 +52,9 @@ public class Door
     {
         return this.doorName;
     }
+    // 1.8 Name is a instance variable, while newName is a constructor variable. Name exists in the class, while newName exists anywhere it is called
+    
+    // 1.9 The implicit parameter is backDoor, and the explicit parameter is "blue back door"
+    
     
 }
