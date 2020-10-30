@@ -2,7 +2,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
 /**
- * This component creates the complete target
+ * This component creates the target component
  *
  * @author ArjSan1
  * @version 10/28/2020

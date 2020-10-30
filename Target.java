@@ -29,8 +29,7 @@ public class Target
     }
 
     /**
-     * This method draws a single circle, so you need to create 3 or more of these with alternating color to create the target.
-     *
+     * This method draws draws the target
      * @param g2 the graphics context
      */
     public void drawTarget(Graphics2D g2)
