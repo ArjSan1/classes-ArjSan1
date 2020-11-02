@@ -16,8 +16,10 @@ public class Target
     private int height;
     /**
      * Constructor for Target with a given top left corner.
-     * @param the x coordinate of the top left corner/ the width of the ellipse
-     * @param the y coordinate of the top left corner/ the height of the 
+     * @param the x coordinate of the top left corner
+     * @param the width of the ellipse
+     * @param the y coordinate of the top left corner 
+     * @param the height of the ellipse
      */
     public Target(int initialX, int initialY, int initialWidth, int initialHeight)
     {

@@ -13,6 +13,13 @@ public class CaesarCipher
     private static final String ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     
     private String keyphrase;
+    
+    public CaesarCipher(String initialKeyphrase)
+    {
+        //prepare the keyphrase by removing suplicate letters
+        this.compressKeyphrase(initialKeyphrase);
+        
+    }
     /**
      * Returns a string that describes the average time to crack the cipher.
      *      in several formats, based on the specified number of seconds per guess
@@ -92,8 +99,87 @@ public class CaesarCipher
         return desc;
     }
     
-    
-    
+    /**
+     * Compresses the specified keyphrase by removing all duplicate letters
+     * @param keyphrase the keyphrase to compress
+     * 
+     */
+    public void compressKeyphrase(String keyphrase)
+    {
+        this.keyphrase = "";
+        /*
+         * length
+         *      returns the number of characters in the string
+         *      
+         */
+        int keyphraseLength = keyphrase.length();
+        
+        for(int i= 0; i< keyphraseLength; i++)
+        {
+            /*
+             * 
+             * charAt
+             *      returns the chracter (of type char) at specified index (0-based)
+             *      keyphrase:
+             *      C A E S A R
+             *      0 1 2 3 4 5 <= indicies
+             *      
+             *      length = 6
+             */
+            char letter = keyphrase.charAt(i);
+            
+            /*
+             * substring
+             *      returns part of the string startuing ast the first specified index
+             *          up to, but not including, the second specified index
+             *         if only one index is specified, returns part of the string
+             *          at the specified index through the end of the string
+             *         substring does not support negative indicies
+             *          For example, instead of -2, we would specify
+             *              keyphrase.length()-2
+             *  keyphrase:
+             *      C A E S A R
+             *      0 1 2 3 4 5 <= indicies
+             *      
+             *      length = 6
+             */ 
+            String restOfKeyphrase = keyphrase.substring(i+1);
+            // same as: kephrase.substring(i+1, keyphrase.length());
+            
+            /*
+             * indexOf
+             *      returns the index of the start of th efirst occurence of the 
+             *          specified string
+             *         if not found, returns -1
+             *         
+             *   restOfKeyphrase:
+             *      A E S A R
+             *      0 1 2 3 4           <= indicies
+             *      
+             *      length = 5
+             */
+            int index = restOfKeyphrase.indexOf(letter);
+            
+            /*
+             * String concatenation
+             *  + is the string concatenation eperator
+             *  concatenates the second String operand to the enmd of the first 
+             *      Streing operand
+             *     if one or both operands are a String type, + is the string concatenation
+             *     operator (operands are converted to string objects); otherwise, + is the addition operator
+             *   int x = 7;
+             *   String xAsString = "" + x; // xAsString => "7"
+             *   
+             */
+            if(index == -1) // if the letter is not a duplicate
+             {
+                 this.keyphrase = this.keyphrase + letter;
+                 // same as: this.keyphrase += letter;
+                }
+        }
+        
+        
+    }
     /**
      * Encrypts the specified text using the specified keyphrase using a
      *      keyphrase-enhanced Caesar Cipher.
