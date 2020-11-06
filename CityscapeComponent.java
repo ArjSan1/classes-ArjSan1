@@ -11,13 +11,19 @@ import javax.swing.JComponent;
  */
 public class CityscapeComponent extends JComponent
 {
-    // define the objects in your Cityscape as instance variables
-    // ...
+    // instance variables
+    private Moon moon1;
     
     
-    
-    // define the CityscapeComponent contructor and intiailize all instance variables
-    // ...
+    //CityscapeComponent contructor and intiailized all instance variables
+    /**
+     * 
+     */
+    public void  CityScapeComponent(Graphics2D g2)
+    {
+      this.moon1 = new Moon(100,100,50,50);
+      
+    }
     
     
     /**
@@ -33,7 +39,7 @@ public class CityscapeComponent extends JComponent
         Graphics2D g2 = (Graphics2D) g;
         
         // invoke the draw method on each object in your Cityscape
-        // ...
+        moon1.drawMoon(g2);
         
         
     }

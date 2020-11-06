@@ -9,13 +9,13 @@ import java.awt.Color;
  */
 public class Target
 {
-    // instance variables - replace the example below with your own
+    // instance variables 
     private int xLeft;
     private int yTop;
     private int width;
     private int height;
     /**
-     * Constructor for Target with a given top left corner.
+     * Constructor for Target with a given top left corner, width, and height
      * @param the x coordinate of the top left corner
      * @param the width of the ellipse
      * @param the y coordinate of the top left corner 
@@ -23,7 +23,8 @@ public class Target
      */
     public Target(int initialX, int initialY, int initialWidth, int initialHeight)
     {
-        // initialise instance variables
+        
+        
         this.xLeft = initialX;
         this.yTop = initialY;
         this.width = initialWidth;
