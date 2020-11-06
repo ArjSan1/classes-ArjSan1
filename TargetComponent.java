@@ -15,12 +15,12 @@ public class TargetComponent extends JComponent
    {  
       Graphics2D g2 = (Graphics2D) g;  
 
-      Target circle1 = new Target(200, 200, 100, 100); 
+      Target circle1 = new Target(100, 100, 100, 100); 
       
       
-      // draw cars
-      circle1.draw(g2);
+      // draw circles
       
+      circle1.drawTarget(g2);
     
    }
 }

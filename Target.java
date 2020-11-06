@@ -38,20 +38,30 @@ public class Target
     {
         Ellipse2D.Double circle = new Ellipse2D.Double(this.xLeft, this.yTop, width, height);
         g2.setColor(Color.BLACK);
+       
+        g2.fill(circle);
         g2.draw(circle);
         
         width = width - 50;
         height = height - 50;
-        
+        this.xLeft =  this.xLeft +25;
+        this.yTop =  this.yTop +25;
         Ellipse2D.Double circle2 = new Ellipse2D.Double(this.xLeft, this.yTop, width, height);
         g2.setColor(Color.WHITE);
+       
+        g2.fill(circle2);
         g2.draw(circle2);
         
         width = width - 25;
         height = height - 25;
+       this.xLeft =  this.xLeft + 12;
+        this.yTop =  this.yTop +12;
         
         Ellipse2D.Double circle3 = new Ellipse2D.Double(this.xLeft, this.yTop, width, height);
+        
         g2.setColor(Color.BLACK);
+       
+        g2.fill(circle3);
         g2.draw(circle3);
         
     }
