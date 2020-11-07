@@ -1,7 +1,7 @@
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
-
+import java.awt.Color;
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
  *  cityscape to these object.
@@ -21,7 +21,7 @@ public class CityscapeComponent extends JComponent
      */
     public void  CityScapeComponent(Graphics2D g2)
     {
-      this.moon1 = new Moon(100,100,50,50);
+      this.moon1 = new Moon(100,100,50,50, Color.WHITE);
       
     }
     

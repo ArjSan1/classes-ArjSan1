@@ -12,6 +12,7 @@ public class Moon
     private int yTop;
     private int width;
     private int height;
+    private Color color;
 
     /**
      * The constructor for moon with a specified left corner, width, and height.
@@ -20,20 +21,21 @@ public class Moon
      * @param the y coordinate of the top left corner 
      * @param the height of the moon
      */
-    public Moon(int initialX, int initialY, int initialWidth, int initialHeight)
+    public Moon(int initialX, int initialY, int initialWidth, int initialHeight, Color initialColor)
     {
         
         this.xLeft = initialX;
         this.yTop = initialY;
         this.width = initialWidth;
         this.height = initialHeight;
-        
+        this.color = initialColor;
     }
     
     public void drawMoon(Graphics2D g2)
     {
         Ellipse2D.Double moon1 = new Ellipse2D.Double(this.xLeft, this.yTop, width, height);
-        g2.setColor(Color.WHITE);
+        color = Color.WHITE;
+        g2.setColor(color);
        
         g2.fill(moon1);
         g2.draw(moon1);
