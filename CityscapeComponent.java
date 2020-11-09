@@ -13,16 +13,21 @@ public class CityscapeComponent extends JComponent
 {
     // instance variables
     private Moon moon1;
-    
+    private Moon moon2;
+    private Moon moon3;
     
     //CityscapeComponent contructor and intiailized all instance variables
     /**
-     * 
+     *
+     * This is the CityscapeComponent contructor and it intiailizes all instance variables
+     * @param g2 the graphics context
      */
     public void  CityScapeComponent(Graphics2D g2)
     {
-      this.moon1 = new Moon(100,100,50,50, Color.WHITE);
-      
+      this.moon1 = new Moon(50,50,50,50, Color.WHITE);
+      this.moon2 = new Moon(100,25,50,50, Color.WHITE);
+      this.moon3 = new Moon(150,50,50,50, Color.WHITE);
+
     }
     
     
@@ -40,7 +45,8 @@ public class CityscapeComponent extends JComponent
         
         // invoke the draw method on each object in your Cityscape
         moon1.drawMoon(g2);
-        
+        moon2.drawMoon(g2);
+        moon3.drawMoon(g2);
         
     }
     
