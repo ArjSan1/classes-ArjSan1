@@ -22,11 +22,11 @@ public class CityscapeComponent extends JComponent
      * This is the CityscapeComponent contructor and it intiailizes all instance variables
      * @param g2 the graphics context
      */
-    public void  CityScapeComponent(Graphics2D g2)
+    public CityscapeComponent()
     {
-      this.moon1 = new Moon(50,50,50,50, Color.WHITE);
-      this.moon2 = new Moon(100,25,50,50, Color.WHITE);
-      this.moon3 = new Moon(150,50,50,50, Color.WHITE);
+     this.moon1 = new Moon(50,50,50,50, Color.WHITE);
+     this.moon2 = new Moon(100,25,50,50, Color.WHITE);
+     this.moon3 = new Moon(150,50,50,50, Color.WHITE);
 
     }
     

@@ -15,11 +15,12 @@ public class Moon
     private Color color;
 
     /**
-     * The constructor for moon with a specified left corner, width, and height.
+     * The constructor for moon with a specified left corner, width, height, and color
      * @param the x coordinate of the top left corner
      * @param the width of the moon
      * @param the y coordinate of the top left corner 
      * @param the height of the moon
+     * @param the color of the moon
      */
     public Moon(int initialX, int initialY, int initialWidth, int initialHeight, Color initialColor)
     {
@@ -34,7 +35,7 @@ public class Moon
     public void drawMoon(Graphics2D g2)
     {
         Ellipse2D.Double moon1 = new Ellipse2D.Double(this.xLeft, this.yTop, width, height);
-        color = Color.WHITE;
+        
         g2.setColor(color);
        
         g2.fill(moon1);
