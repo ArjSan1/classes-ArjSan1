@@ -15,7 +15,7 @@ public class CityscapeComponent extends JComponent
     private Moon moon1;
     private Moon moon2;
     private Moon moon3;
-    
+    private Land land1;
     //CityscapeComponent contructor and intiailized all instance variables
     /**
      *
@@ -27,7 +27,7 @@ public class CityscapeComponent extends JComponent
      this.moon1 = new Moon(50,50,50,50, Color.WHITE);
      this.moon2 = new Moon(100,25,50,50, Color.WHITE);
      this.moon3 = new Moon(150,50,50,50, Color.WHITE);
-
+     this.land1 =  new Land(0,300,800,300, Color.GREEN);
     }
     
     
@@ -47,7 +47,7 @@ public class CityscapeComponent extends JComponent
         moon1.drawMoon(g2);
         moon2.drawMoon(g2);
         moon3.drawMoon(g2);
-        
+        land1.drawLand(g2);
     }
     
     /**
