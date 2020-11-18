@@ -1,12 +1,13 @@
+
 import java.awt.Graphics2D;
-import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
 import java.awt.Color;
 /**
  * Constructs a moon
  * @author ArjSan1
  * @version 11/6/2020
  */
-public class Moon
+public class Building
 {
     private int xLeft;
     private int yTop;
@@ -15,14 +16,14 @@ public class Moon
     private Color color;
 
     /**
-     * The constructor for moon with a specified left corner, width, height, and color
+     * The constructor for buildings with a specified left corner, width, height, and color
      * @param the x coordinate of the top left corner
      * @param the width of the moon
      * @param the y coordinate of the top left corner 
      * @param the height of the moon
      * @param the color of the moon
      */
-    public Moon(int initialX, int initialY, int initialWidth, int initialHeight, Color initialColor)
+    public Building(int initialX, int initialY, int initialWidth, int initialHeight, Color initialColor)
     {
         
         this.xLeft = initialX;
@@ -32,20 +33,20 @@ public class Moon
         this.color = initialColor;
     }
     /**
-      Draws the moon.
+      Draws the building.
       @param g2 the graphics context
    */
-    public void drawMoon(Graphics2D g2)
+    public void drawBuilding(Graphics2D g2)
     {
-        Ellipse2D.Double moon1 = new Ellipse2D.Double(this.xLeft, this.yTop, width, height);
+        Rectangle2D.Double b = new Rectangle2D.Double(this.xLeft, this.yTop, width, height);
         
         g2.setColor(color);
-       
-        g2.fill(moon1);
-        g2.draw(moon1);
         
+        g2.fill(b);
+        g2.draw(b);
+        
+        
+        
+    
     }
-        
-    
-    
 }

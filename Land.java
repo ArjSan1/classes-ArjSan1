@@ -2,7 +2,7 @@ import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.Color;
 /**
- * Constructs a moon
+ * Constructs the land
  * @author ArjSan1
  * @version 11/13/2020
  */
@@ -33,11 +33,9 @@ public class Land
     }
 
     /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
+      Draws the land.
+      @param g2 the graphics context
+   */
    public void drawLand(Graphics2D g2)
     {
         Rectangle2D.Double land1 = new Rectangle2D.Double(this.xLeft, this.yTop, width, height);
