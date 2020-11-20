@@ -16,7 +16,7 @@ public class Window
     private Color color;
 
     /**
-     * The constructor for buildings with a specified left corner, width, height, and color
+     * The constructor for windows with a specified left corner, width, height, and color
      * @param the x coordinate of the top left corner
      * @param the width of the moon
      * @param the y coordinate of the top left corner 

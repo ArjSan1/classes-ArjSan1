@@ -2,6 +2,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import java.awt.Color;
+
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
  *  cityscape to these object.
@@ -20,6 +21,9 @@ public class CityscapeComponent extends JComponent
     private Building b3;
     private Window w2;
     private Window w3;
+    private Building b4;
+    private Window w4;
+    private UFO u1;
     //CityscapeComponent contructor and intiailized all instance variables
     /**
      *
@@ -34,9 +38,11 @@ public class CityscapeComponent extends JComponent
      this.b1 = new Building(25, 300, 100, 200, Color.MAGENTA);
      this.b2 = new Building(240, 350, 100, 150, Color.CYAN);
      this.w2 = new Window(290, 370, 35, 30, Color.YELLOW);
-     this.b3 = new Building(470, 325, 100, 175, Color.RED);
+     this.b3 = new Building(470, 325, 100, 175, Color.BLUE);
      this.w3 = new Window(480, 350, 50, 40, Color.YELLOW);
-
+     this.b4 = new Building(650, 340,100, 160, Color.PINK);
+     this.w4 = new Window(700, 360, 35, 35, Color.YELLOW);
+     this.u1 = new UFO(550, 200, 200, 30, Color.RED); 
     }
     
     
@@ -61,6 +67,9 @@ public class CityscapeComponent extends JComponent
         this.w2.drawWindow(g2);
         this.b3.drawBuilding(g2);
         this.w3.drawWindow(g2);
+        this.b4.drawBuilding(g2);
+        this.w4.drawWindow(g2);
+        this.u1.drawUFO(g2);
     }
     
     /**
