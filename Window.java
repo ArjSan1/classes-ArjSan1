@@ -3,11 +3,11 @@ import java.awt.Graphics2D;
 import java.awt.geom.Rectangle2D;
 import java.awt.Color;
 /**
- * Constructs a building
+ * Constructs a window
  * @author ArjSan1
  * @version 11/6/2020
  */
-public class Building
+public class Window
 {
     private int xLeft;
     private int yTop;
@@ -23,7 +23,7 @@ public class Building
      * @param the height of the moon
      * @param the color of the moon
      */
-    public Building(int initialX, int initialY, int initialWidth, int initialHeight, Color initialColor)
+    public Window(int initialX, int initialY, int initialWidth, int initialHeight, Color initialColor)
     {
         
         this.xLeft = initialX;
@@ -36,14 +36,14 @@ public class Building
       Draws the building.
       @param g2 the graphics context
    */
-    public void drawBuilding(Graphics2D g2)
+    public void drawWindow(Graphics2D g2)
     {
-        Rectangle2D.Double b = new Rectangle2D.Double(this.xLeft, this.yTop, width, height);
+        Rectangle2D.Double w = new Rectangle2D.Double(this.xLeft, this.yTop, width, height);
         
         g2.setColor(color);
         
-        g2.fill(b);
-        g2.draw(b);
+        g2.fill(w);
+        g2.draw(w);
         
         
         
