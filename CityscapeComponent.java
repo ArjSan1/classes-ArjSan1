@@ -2,7 +2,9 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import javax.swing.JComponent;
 import java.awt.Color;
-
+import javax.swing.JFrame;
+import java.awt.Color;
+import java.awt.geom.Ellipse2D.Double;
 /**
  * Class that creates instances of the classes that comprise the cityscape and delegates drawing the
  *  cityscape to these object.
@@ -24,6 +26,11 @@ public class CityscapeComponent extends JComponent
     private Building b4;
     private Window w4;
     private UFO u1;
+    int x = 500;
+
+    Color glass = new Color(168,204,215);
+    Color alien = new Color(2,100,64);
+    Graphics2D g2 = null;
     //CityscapeComponent contructor and intiailized all instance variables
     /**
      *
@@ -32,20 +39,21 @@ public class CityscapeComponent extends JComponent
      */
     public CityscapeComponent()
     {
-     this.moon1 = new Moon(50,50,50,50, Color.WHITE);
-     this.w1 = new Window(35, 325, 50, 50, Color.YELLOW);
-     this.land1 =  new Land(0,500,800,300, Color.GREEN);
-     this.b1 = new Building(25, 300, 100, 200, Color.MAGENTA);
-     this.b2 = new Building(240, 350, 100, 150, Color.CYAN);
-     this.w2 = new Window(290, 370, 35, 30, Color.YELLOW);
-     this.b3 = new Building(470, 325, 100, 175, Color.BLUE);
-     this.w3 = new Window(480, 350, 50, 40, Color.YELLOW);
-     this.b4 = new Building(650, 340,100, 160, Color.PINK);
-     this.w4 = new Window(700, 360, 35, 35, Color.YELLOW);
-     this.u1 = new UFO(550, 200, 200, 30, Color.RED); 
+        this.moon1 = new Moon(50,50,50,50, Color.WHITE);
+        this.w1 = new Window(35, 325, 50, 50, Color.YELLOW);
+        this.land1 =  new Land(0,500,800,300, Color.GREEN);
+        this.b1 = new Building(25, 300, 100, 200, Color.MAGENTA);
+        this.b2 = new Building(240, 350, 100, 150, Color.CYAN);
+        this.w2 = new Window(290, 370, 35, 30, Color.YELLOW);
+        this.b3 = new Building(470, 325, 100, 175, Color.BLUE);
+        this.w3 = new Window(480, 350, 50, 40, Color.YELLOW);
+        this.b4 = new Building(650, 340,100, 160, Color.PINK);
+        this.w4 = new Window(700, 360, 35, 35, Color.YELLOW);
+        this.u1 = new UFO(550, 200, 200, 30, Color.RED,glass); 
+
+        this.u1 = new UFO(550, 200, 200, 30, Color.RED,glass); 
     }
-    
-    
+
     /**
      * This method is invoked by the Java Run-Time whenever the component needs to be redrawn.
      * It does not need to be invoked explicitly.
@@ -56,8 +64,9 @@ public class CityscapeComponent extends JComponent
     @Override
     public void paintComponent(Graphics g)
     {
+
         Graphics2D g2 = (Graphics2D) g;
-        
+
         // invoke the draw method on each object in your Cityscape
         this.moon1.drawMoon(g2);
         this.land1.drawLand(g2);
@@ -69,9 +78,10 @@ public class CityscapeComponent extends JComponent
         this.w3.drawWindow(g2);
         this.b4.drawBuilding(g2);
         this.w4.drawWindow(g2);
+
         this.u1.drawUFO(g2);
     }
-    
+
     /**
      * Animate the cityscape by updating the objects such that they appear to be animated when
      *      they are next drawn.
@@ -79,11 +89,13 @@ public class CityscapeComponent extends JComponent
      */
     public void nextFrame()
     {
+
         // update the objects in the cityscape so they are animated
         // ...
-        
-        
-        
+        if (x <=50)
+            x=500;
+        u1.setX(x=x-50);
+
         // request that the Java Runtime repaints this component by invoking its paintComponent method
         //  do not explicitly invoke the paintComponent method
         repaint();

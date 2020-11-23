@@ -14,7 +14,7 @@ public class Land
     private int width;
     private int height;
     private Color color;
-/**
+    /**
     The constructor for land with a specified left corner, width, height, and color
      * @param the x coordinate of the top left corner
      * @param the width of the land
@@ -24,7 +24,7 @@ public class Land
      */
     public Land(int initialX, int initialY, int initialWidth, int initialHeight, Color initialColor)
     {
-        
+
         this.xLeft = initialX;
         this.yTop = initialY;
         this.width = initialWidth;
@@ -33,17 +33,17 @@ public class Land
     }
 
     /**
-      Draws the land.
-      @param g2 the graphics context
-   */
-   public void drawLand(Graphics2D g2)
+    Draws the land.
+    @param g2 the graphics context
+     */
+    public void drawLand(Graphics2D g2)
     {
         Rectangle2D.Double land1 = new Rectangle2D.Double(this.xLeft, this.yTop, width, height);
-        
+
         g2.setColor(color);
-       
+
         g2.fill(land1);
         g2.draw(land1);
-        
+
     }
 }
